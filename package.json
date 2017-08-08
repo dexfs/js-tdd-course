@@ -1,0 +1,24 @@
+{
+  "name": "js-tdd-course",
+  "version": "1.0.0",
+  "description": "Trying to learn JS definitely ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dexfs/js-tdd-course.git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "André Santos <andre@dexdev.com.br> (https://dexfs.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dexfs/js-tdd-course/issues"
+  },
+  "homepage": "https://github.com/dexfs/js-tdd-course#readme"
+}
