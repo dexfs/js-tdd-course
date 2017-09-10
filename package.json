@@ -5,9 +5,16 @@
   "main": "index.js",
   "scripts": {
     "lint": " ./node_modules/.bin/eslint src/*.js",
-    "prepush": "npm run lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
-    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch"
+    "prepush": "npm run lint && npm run test:coverage",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch --recursive",
+    "test:coverage":"nyc npm test"
+  },
+  "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "reporter": ["text", "html"],
+    "exclude": ["tests/**"]
   },
   "repository": {
     "type": "git",
@@ -27,12 +34,16 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-es2015-native-modules": "^6.9.4",
-    "eslint": "^4.4.1",
-    "eslint-config-airbnb-base": "^11.3.1",
+    "babel-register": "^6.26.0",
+    "chai": "^3.5.0",
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb-base": "^11.3.2",
     "eslint-plugin-import": "^2.7.0",
     "husky": "^0.14.3",
     "mocha": "^3.5.0",
-    "webpack": "^3.5.5"
+    "nyc": "^11.2.1",
+    "webpack": "^3.5.6"
   }
 }
